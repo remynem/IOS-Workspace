@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FindGarageV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCh-Zp-1ep">
+                                <rect key="frame" x="146" y="311" width="82" height="44"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="an0-Ac-EUu" kind="show" id="PBf-DI-nSx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.64920396997031049" blue="0.59897539822141677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sCh-Zp-1ep" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EZQ-Uz-5fq"/>
+                            <constraint firstItem="sCh-Zp-1ep" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xSN-iL-Lt2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-431.19999999999999" y="127.28635682158921"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BY2-Bl-Xgc">
+            <objects>
+                <viewController id="esA-fd-gx0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rBC-QP-Ue6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Nearest Garage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKJ-eB-GSM">
+                                <rect key="frame" x="33" y="318" width="309" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RKJ-eB-GSM" firstAttribute="centerY" secondItem="rBC-QP-Ue6" secondAttribute="centerY" id="rJf-1x-ONP"/>
+                            <constraint firstItem="RKJ-eB-GSM" firstAttribute="centerX" secondItem="rBC-QP-Ue6" secondAttribute="centerX" id="xjK-gN-5rW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CIe-eB-pWo"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="WUy-h5-mhK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bv5-Es-CWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-471.19999999999999" y="909.89505247376314"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="s4q-AU-Fke">
+            <objects>
+                <viewController id="8GM-ej-4ym" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XE2-5u-7Zx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esP-jU-uSc">
+                                <rect key="frame" x="130.5" y="318" width="114" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.64920396999999996" blue="0.59897539820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="esP-jU-uSc" firstAttribute="centerY" secondItem="XE2-5u-7Zx" secondAttribute="centerY" id="2bY-9Y-dpX"/>
+                            <constraint firstItem="esP-jU-uSc" firstAttribute="centerX" secondItem="XE2-5u-7Zx" secondAttribute="centerX" id="ccl-Wd-aXi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bFq-0i-dXz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="mpI-OF-m9d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7g-ig-cHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="345" y="910"/>
+        </scene>
+        <!--Nav Bar View Controller-->
+        <scene sceneID="rLK-oB-UbU">
+            <objects>
+                <tabBarController id="an0-Ac-EUu" customClass="NavBarViewController" customModule="FindGarageV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mf4-XA-WDB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8GM-ej-4ym" kind="relationship" relationship="viewControllers" id="bSX-d1-n6X"/>
+                        <segue destination="esA-fd-gx0" kind="relationship" relationship="viewControllers" id="aOq-QA-cUP"/>
+                        <segue destination="XKI-9b-HPn" kind="relationship" relationship="viewControllers" id="uER-Qi-kuw"/>
+                        <segue destination="d0s-80-MMX" kind="relationship" relationship="viewControllers" id="QHr-uq-kh0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xra-GQ-neM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="127"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JbB-ra-YKM">
+            <objects>
+                <viewController id="XKI-9b-HPn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wi7-Yb-cmW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdP-gE-kvj">
+                                <rect key="frame" x="82" y="318" width="211.5" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qdP-gE-kvj" firstAttribute="centerY" secondItem="wi7-Yb-cmW" secondAttribute="centerY" id="Goc-9U-qUG"/>
+                            <constraint firstItem="qdP-gE-kvj" firstAttribute="centerX" secondItem="wi7-Yb-cmW" secondAttribute="centerX" id="RTB-Zy-GCV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8rc-zY-H2m"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="Cmz-03-obB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9x-uZ-JSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="910"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2Iw-Cy-iO0">
+            <objects>
+                <viewController id="d0s-80-MMX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dS5-PM-Osm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-UB-cbk">
+                                <rect key="frame" x="130.5" y="318" width="114" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.64920396999999996" blue="0.59897539820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="H6e-UB-cbk" firstAttribute="centerX" secondItem="dS5-PM-Osm" secondAttribute="centerX" id="EA1-9x-USq"/>
+                            <constraint firstItem="H6e-UB-cbk" firstAttribute="centerY" secondItem="dS5-PM-Osm" secondAttribute="centerY" id="xho-tX-h3T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aBF-AT-hgR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="yKE-Pb-2cf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGm-E7-lG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1929" y="910"/>
+        </scene>
+    </scenes>
+</document>
