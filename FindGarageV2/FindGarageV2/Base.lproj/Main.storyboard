@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="-55" y="-501"/>
         </scene>
-        <!--Pending Devis Tab Bar Controller-->
+        <!--Contact-->
         <scene sceneID="Kkk-4g-yTN">
             <objects>
                 <tableViewController storyboardIdentifier="PendingDevisTabBarController" id="gS6-h9-8Ot" customClass="PendingDevisTabBarController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="j4x-Xq-P49">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GarageDetails" id="j4x-Xq-P49">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4x-Xq-P49" id="zBO-fz-yBG">
@@ -65,7 +65,7 @@
                             <outlet property="delegate" destination="gS6-h9-8Ot" id="hw3-5q-Jar"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="zkr-8c-u5e"/>
+                    <tabBarItem key="tabBarItem" title="Contact" image="icons8-Contact Garage" id="zkr-8c-u5e"/>
                     <connections>
                         <outlet property="ListOfPendingDevisTableView" destination="bXJ-dU-gLK" id="bLH-VC-DHX"/>
                     </connections>
@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="1007" y="889"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="Dkw-Kd-Oh7">
             <objects>
                 <viewController id="JEO-b0-0de" sceneMemberID="viewController">
@@ -99,13 +99,13 @@
                             <constraint firstItem="uPC-zE-tNO" firstAttribute="centerX" secondItem="lwp-Gr-8CK" secondAttribute="centerX" id="vK3-8N-BJF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Ibf-OH-Dcj"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-User Profile" id="Ibf-OH-Dcj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjS-8H-5BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3040.8000000000002" y="889.20539730134942"/>
         </scene>
-        <!--View Controller-->
+        <!--Feedback-->
         <scene sceneID="634-Zo-whs">
             <objects>
                 <viewController id="dsX-fp-Td8" sceneMemberID="viewController">
@@ -130,13 +130,13 @@
                             <constraint firstItem="kJL-63-AUY" firstAttribute="centerX" secondItem="vfW-T5-kuv" secondAttribute="centerX" id="ocT-b9-vd6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="HkO-p1-c8s"/>
+                    <tabBarItem key="tabBarItem" title="Feedback" image="icons8-notifications" id="HkO-p1-c8s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bx-Si-4rl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2044" y="889.20539730134942"/>
         </scene>
-        <!--Find Garage Tab Bar Controller-->
+        <!--Map-->
         <scene sceneID="RKA-6u-Maq">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="exy-gw-zWy" customClass="FindGarageTabBarController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -151,17 +151,26 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zUg-iW-eJe">
                                 <rect key="frame" x="16" y="28" width="343" height="266"/>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cvU-6S-cMX">
+                                <rect key="frame" x="16" y="336" width="343" height="274"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.33611769660000002" green="0.4673143636" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zUg-iW-eJe" firstAttribute="centerX" secondItem="G6b-ug-q7I" secondAttribute="centerX" id="Pb0-XZ-fiP"/>
+                            <constraint firstItem="cvU-6S-cMX" firstAttribute="leading" secondItem="zUg-iW-eJe" secondAttribute="leading" id="QRQ-ov-vDg"/>
                             <constraint firstItem="b4v-BZ-mXU" firstAttribute="top" secondItem="zUg-iW-eJe" secondAttribute="bottom" constant="324" id="QTN-Wc-Lln"/>
                             <constraint firstItem="zUg-iW-eJe" firstAttribute="leading" secondItem="G6b-ug-q7I" secondAttribute="leadingMargin" id="cd4-Nb-btG"/>
+                            <constraint firstItem="cvU-6S-cMX" firstAttribute="top" secondItem="zUg-iW-eJe" secondAttribute="bottom" constant="42" id="fVN-65-AKp"/>
                             <constraint firstItem="zUg-iW-eJe" firstAttribute="top" secondItem="nYr-18-5ms" secondAttribute="bottom" constant="8" symbolic="YES" id="fh7-mw-FhU"/>
+                            <constraint firstItem="b4v-BZ-mXU" firstAttribute="top" secondItem="cvU-6S-cMX" secondAttribute="bottom" constant="8" symbolic="YES" id="jUu-YX-qqi"/>
+                            <constraint firstItem="cvU-6S-cMX" firstAttribute="trailing" secondItem="zUg-iW-eJe" secondAttribute="trailing" id="m6p-st-r6M"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="NOP-fj-VCU"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icons8-Garage locator" id="NOP-fj-VCU"/>
                     <connections>
+                        <outlet property="ListKnownGarageTableView" destination="cvU-6S-cMX" id="GSr-D1-Y5M"/>
                         <outlet property="MainMap" destination="zUg-iW-eJe" id="DgE-p7-7SH"/>
                     </connections>
                 </viewController>
@@ -190,4 +199,10 @@
             <point key="canvasLocation" x="1492" y="-500"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-Contact Garage" width="25" height="25"/>
+        <image name="icons8-Garage locator" width="25" height="25"/>
+        <image name="icons8-User Profile" width="25" height="25"/>
+        <image name="icons8-notifications" width="25" height="25"/>
+    </resources>
 </document>
