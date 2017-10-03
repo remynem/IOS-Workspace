@@ -89,6 +89,6 @@ class FindGarageTabBarController: UIViewController, CLLocationManagerDelegate, M
     
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("Did select \(view.annotation?.title)")
+        print("Did select \(String(describing: view.annotation?.title))")
     }
 }
