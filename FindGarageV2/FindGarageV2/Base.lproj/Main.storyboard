@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,30 +27,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuR-jE-k7H">
-                                <rect key="frame" x="130.5" y="311.5" width="114" height="44"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
-                                <state key="normal" title="Welcome"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UU6-0A-sYJ" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="sbr-Kt-l9V" kind="show" id="JwL-fz-65l"/>
+                                    <action selector="loginWithGoogleAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="9p7-IT-2QV"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.62214086059999996" blue="0.52626595369999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UuR-jE-k7H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EUb-M4-z8j"/>
-                            <constraint firstItem="UuR-jE-k7H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IeY-gT-Mfa"/>
+                            <constraint firstItem="UU6-0A-sYJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8SH-wb-IuM"/>
+                            <constraint firstItem="UU6-0A-sYJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8x1-1l-hgK"/>
+                            <constraint firstItem="UU6-0A-sYJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="IoS-nF-NcZ"/>
+                            <constraint firstItem="UU6-0A-sYJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="249" id="tTZ-RZ-7sh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginWithGoogleButton" destination="UU6-0A-sYJ" id="iP3-I4-dki"/>
+                        <segue destination="sbr-Kt-l9V" kind="presentation" identifier="loginSuccessSegueId" id="cWH-s5-vKt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="-501"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="-501.72413793103448"/>
         </scene>
         <!--Contact-->
         <scene sceneID="Kkk-4g-yTN">
             <objects>
-                <tableViewController storyboardIdentifier="PendingDevisTabBarController" id="gS6-h9-8Ot" customClass="PendingDevisTabBarController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PendingDevisTabBarController" id="gS6-h9-8Ot" customClass="PendingDevisViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bXJ-dU-gLK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +65,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4x-Xq-P49" id="zBO-fz-yBG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -87,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPC-zE-tNO">
-                                <rect key="frame" x="131" y="318" width="114" height="31.5"/>
+                                <rect key="frame" x="130.5" y="318" width="114" height="31"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -118,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJL-63-AUY">
-                                <rect key="frame" x="82" y="318" width="211.5" height="31.5"/>
+                                <rect key="frame" x="81.5" y="318" width="212" height="31"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,7 +140,7 @@
                             <constraint firstItem="kJL-63-AUY" firstAttribute="centerX" secondItem="vfW-T5-kuv" secondAttribute="centerX" id="ocT-b9-vd6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feedback" image="icons8-notifications" id="HkO-p1-c8s"/>
+                    <tabBarItem key="tabBarItem" title="Feedback" image="icons8-Feedback" id="HkO-p1-c8s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bx-Si-4rl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,7 +149,7 @@
         <!--Map-->
         <scene sceneID="RKA-6u-Maq">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="exy-gw-zWy" customClass="FindGarageTabBarController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindGarageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="exy-gw-zWy" customClass="FindGarageViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nYr-18-5ms"/>
                         <viewControllerLayoutGuide type="bottom" id="b4v-BZ-mXU"/>
@@ -170,8 +180,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icons8-Garage locator" id="NOP-fj-VCU"/>
                     <connections>
-                        <outlet property="ListKnownGarageTableView" destination="cvU-6S-cMX" id="GSr-D1-Y5M"/>
-                        <outlet property="MainMap" destination="zUg-iW-eJe" id="DgE-p7-7SH"/>
+                        <outlet property="listKnownGaragesTableView" destination="cvU-6S-cMX" id="GSr-D1-Y5M"/>
+                        <outlet property="mapNearestGarages" destination="zUg-iW-eJe" id="DgE-p7-7SH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hci-cX-bSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +191,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Dax-RO-UIH">
             <objects>
-                <tabBarController id="sbr-Kt-l9V" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sbr-Kt-l9V" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="eYv-PP-bHl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,8 +211,8 @@
     </scenes>
     <resources>
         <image name="icons8-Contact Garage" width="25" height="25"/>
+        <image name="icons8-Feedback" width="25" height="25"/>
         <image name="icons8-Garage locator" width="25" height="25"/>
         <image name="icons8-User Profile" width="25" height="25"/>
-        <image name="icons8-notifications" width="25" height="25"/>
     </resources>
 </document>
