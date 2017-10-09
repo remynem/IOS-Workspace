@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInUIDelegate {
 
+    
+    @IBOutlet weak var loginWithGoogleButton: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.onGoogleLoginFail, object: nil, queue: OperationQueue.main) { (notification) in
+            //print(notification.userInfo)
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.onGoogleLoginSuccess, object: nil, queue: OperationQueue.main) { (notification) in
+            print("Notification")
+            
+            self.performSegue(withIdentifier: "goToMainTabBarControllerSegue", sender: notification.userInfo)
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +38,10 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func loginWithGoogleButton(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     
      
 }

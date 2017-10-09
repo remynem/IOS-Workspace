@@ -11,16 +11,17 @@ import Firebase
 import Google
 import GoogleSignIn
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
-    var ref:DatabaseReference!
+    //var ref:DatabaseReference!
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        ref = Database.database().reference()
+        //ref = Database.database().reference()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self

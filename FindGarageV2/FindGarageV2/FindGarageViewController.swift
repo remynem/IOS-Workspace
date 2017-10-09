@@ -17,7 +17,7 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
     @IBOutlet weak var listKnownGaragesTableView: UITableView!
     let locationManager = CLLocationManager()
     var garages:[Garage] = []
-    var detailsGarage:DetailsGarage!
+    //var detailsGarage:Garage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,10 +85,10 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let placeId = String(describing: view.annotation?.title)
-        print("Did select")
-        WebServiceController.fetchPlaceDetails(placeId: placeId){
+        print("Did select\(placeId)")
+        /*WebServiceController.fetchGooglePlaces(near: placeId){
             placeDetails in
                 self.detailsGarage = placeDetails
-        }
+        }*/
     }
 }
