@@ -12,12 +12,11 @@ import CoreLocation
 import MapKit
 
 class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate {
-    
     @IBOutlet weak var mapNearestGarages: MKMapView!
     @IBOutlet weak var listKnownGaragesTableView: UITableView!
     let locationManager = CLLocationManager()
     var garages:[Garage] = []
-    //var detailsGarage:Garage!
+    var detailsGarage:DetailsGarage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         findNearestGarage()
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +58,7 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
         for garage in garages{
             let pin = MKPointAnnotation()
             pin.coordinate = garage.location
-            pin.title = "Garage \(garage.id)"
+            pin.title = garage.id
             mapNearestGarages.addAnnotation(pin)
         }
         let allAnnotations = mapNearestGarages.annotations
@@ -84,11 +83,22 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let placeId = String(describing: view.annotation?.title)
-        print("Did select\(placeId)")
-        /*WebServiceController.fetchGooglePlaces(near: placeId){
-            placeDetails in
-                self.detailsGarage = placeDetails
-        }*/
+        //let placeId = String(describing: view.annotation?.title)
+        let placeId = ""+(view.annotation?.title!)!
+        print("Did select \(placeId)")
+        
+        WebServiceController.fetchGooglePlaceDetails(placeId: placeId){ placeDetails in
+            guard let placeDetails = placeDetails else{
+                print("Place details is nil.....")
+                return
+            }
+            self.detailsGarage = placeDetails
+            self.displayPlaceDetail(place: placeDetails)
+         }
+        
+    }
+    
+    func displayPlaceDetail(place:DetailsGarage){
+        print(place.description())
     }
 }

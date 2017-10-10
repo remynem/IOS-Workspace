@@ -27,6 +27,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
             print("Notification")
             
             self.performSegue(withIdentifier: "goToMainTabBarControllerSegue", sender: notification.userInfo)
+            self.presentAlertDialog(withTitle: "Map corrigé", andMessage: "c'est super")
         }
         
         

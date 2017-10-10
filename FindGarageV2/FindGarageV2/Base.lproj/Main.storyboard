@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.200000000000003" y="-502.39880059970017"/>
+            <point key="canvasLocation" x="-55" y="-501"/>
         </scene>
         <!--Contact-->
         <scene sceneID="Kkk-4g-yTN">
@@ -196,6 +196,10 @@
         <scene sceneID="nhT-Nc-mkd">
             <objects>
                 <viewController id="4TN-lq-dD8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nEi-EX-6Xs"/>
+                        <viewControllerLayoutGuide type="bottom" id="seS-84-xTy"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e7C-6E-aKm">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="286"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

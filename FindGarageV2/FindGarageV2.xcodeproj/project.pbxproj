@@ -10,6 +10,8 @@
 		AD9554F11F8508D000A08D0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2BCD341F84E457007ABF34 /* GoogleService-Info.plist */; };
 		AD9554F31F8521F900A08D0F /* GoogleNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9554F21F8521F900A08D0F /* GoogleNotificationCenter.swift */; };
 		AD9554F51F8525AE00A08D0F /* FireBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9554F41F8525AE00A08D0F /* FireBaseController.swift */; };
+		EC02C47A1F8CB1C5002BC60D /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */; };
+		EC02C47C1F8CB866002BC60D /* DetailsGarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */; };
 		EC8131E81F8BC57400029BA0 /* PendingDevisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131E71F8BC57400029BA0 /* PendingDevisViewController.swift */; };
 		EC8131EA1F8BC5B900029BA0 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131E91F8BC5B900029BA0 /* NotificationsViewController.swift */; };
 		EC8131EC1F8BCAD000029BA0 /* testTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131EB1F8BCAD000029BA0 /* testTableViewController.swift */; };
@@ -31,6 +33,8 @@
 		AD9554F41F8525AE00A08D0F /* FireBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseController.swift; sourceTree = "<group>"; };
 		C33B7BFC94D938A963F6E674 /* Pods-FindGarageV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindGarageV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindGarageV2/Pods-FindGarageV2.release.xcconfig"; sourceTree = "<group>"; };
 		E6AB767D2F1D2538B827175C /* Pods-FindGarageV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindGarageV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindGarageV2/Pods-FindGarageV2.debug.xcconfig"; sourceTree = "<group>"; };
+		EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsGarage.swift; sourceTree = "<group>"; };
 		EC8131E51F8BA7CC00029BA0 /* FacebookSDKs-iOS-4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "FacebookSDKs-iOS-4"; path = "../../../../../Downloads/FacebookSDKs-iOS-4"; sourceTree = "<group>"; };
 		EC8131E71F8BC57400029BA0 /* PendingDevisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingDevisViewController.swift; sourceTree = "<group>"; };
 		EC8131E91F8BC5B900029BA0 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				ECED99411F82655A00335579 /* Info.plist */,
 				AD2BCD341F84E457007ABF34 /* GoogleService-Info.plist */,
 				ECED993E1F82655A00335579 /* LaunchScreen.storyboard */,
+				EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				ECE97D391F83896000C3FFAF /* Garage.swift */,
+				EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -315,10 +321,12 @@
 				EC8131EC1F8BCAD000029BA0 /* testTableViewController.swift in Sources */,
 				ECE97D381F837C8D00C3FFAF /* WebServicesController.swift in Sources */,
 				AD9554F51F8525AE00A08D0F /* FireBaseController.swift in Sources */,
+				EC02C47A1F8CB1C5002BC60D /* UIViewController+Utils.swift in Sources */,
 				EC8131E81F8BC57400029BA0 /* PendingDevisViewController.swift in Sources */,
 				ECED99381F82655A00335579 /* ViewController.swift in Sources */,
 				ECED99361F82655A00335579 /* AppDelegate.swift in Sources */,
 				AD9554F31F8521F900A08D0F /* GoogleNotificationCenter.swift in Sources */,
+				EC02C47C1F8CB866002BC60D /* DetailsGarage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
