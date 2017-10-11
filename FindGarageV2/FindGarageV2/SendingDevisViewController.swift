@@ -20,6 +20,9 @@ class SendingDevisViewController: UIViewController {
     
     
     
+    @IBAction func cancelSendingDevis(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,7 @@ class SendingDevisViewController: UIViewController {
         self.selectedGarageNameUILabel?.text = self.selectedGarage.name
         self.selectedGarageAdresseUILabel?.text = self.selectedGarage.formatted_address
         self.selectedGaragePhoneUILabel?.text = self.selectedGarage.international_phone_number
-        self.selectedGarageWebsiteUILabel?.text = self.selectedGarage.description()
+        self.selectedGarageWebsiteUILabel?.text = self.selectedGarage.website
     }
     /*
     // MARK: - Navigation
@@ -56,6 +59,6 @@ class SendingDevisViewController: UIViewController {
         print("Data sent")
     }
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        dismiss(animated: true, completion: nil)
+        
     }
 }

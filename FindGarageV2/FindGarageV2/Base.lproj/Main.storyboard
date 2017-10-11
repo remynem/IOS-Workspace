@@ -154,7 +154,7 @@
             </objects>
             <point key="canvasLocation" x="4338.3999999999996" y="887.40629685157433"/>
         </scene>
-        <!--Title-->
+        <!--Who we are-->
         <scene sceneID="CbD-cD-VLG">
             <objects>
                 <viewController storyboardIdentifier="SendingDevisViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OGo-df-NI4" customClass="SendingDevisViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -307,8 +307,13 @@
                             <constraint firstItem="cMD-Gc-yVv" firstAttribute="top" secondItem="t1L-dR-tWX" secondAttribute="bottom" id="f5K-kd-HmO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="WTG-uX-gYG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="2hI-Mo-y3A"/>
+                    <navigationItem key="navigationItem" title="Who we are" id="WTG-uX-gYG">
+                        <barButtonItem key="backBarButtonItem" title="Map" id="yud-rL-JKM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="2hI-Mo-y3A">
+                            <connections>
+                                <action selector="cancelSendingDevis:" destination="OGo-df-NI4" id="6O2-tb-Rbm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="selectedGarageAdresseUILabel" destination="xeX-UW-gS7" id="hYr-f5-ZCM"/>
@@ -319,9 +324,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDT-hH-S2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="1829"/>
+            <point key="canvasLocation" x="-521" y="2039"/>
         </scene>
-        <!--List -->
+        <!--Map -->
         <scene sceneID="RKA-6u-Maq">
             <objects>
                 <viewController storyboardIdentifier="FindGarageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="exy-gw-zWy" customClass="FindGarageViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -396,7 +401,7 @@
                             <constraint firstItem="zUg-iW-eJe" firstAttribute="leading" secondItem="G6b-ug-q7I" secondAttribute="leading" id="h6i-Fq-0BS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="List " id="qMx-UP-A2X">
+                    <navigationItem key="navigationItem" title="Map " id="qMx-UP-A2X">
                         <barButtonItem key="rightBarButtonItem" image="icons8-Logout Rounded Up Filled-50" id="CSp-Ef-Jn4"/>
                     </navigationItem>
                     <connections>
@@ -409,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hci-cX-bSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="1175"/>
+            <point key="canvasLocation" x="821" y="1228"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Dax-RO-UIH">
