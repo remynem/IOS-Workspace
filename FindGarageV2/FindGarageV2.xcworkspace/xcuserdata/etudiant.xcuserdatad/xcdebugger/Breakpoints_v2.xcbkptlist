@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindGarageV2/ViewController.swift"
-            timestampString = "529315288.501334"
+            timestampString = "529408666.276648"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FindGarageV2/WebServicesController.swift"
-            timestampString = "529338313.144091"
+            filePath = "FindGarageV2/ViewController.swift"
+            timestampString = "529408666.276648"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "fetchGooglePlaceDetails(placeId:handler:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "loginWithGoogleButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

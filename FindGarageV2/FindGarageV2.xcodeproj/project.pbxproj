@@ -12,9 +12,9 @@
 		AD9554F51F8525AE00A08D0F /* FireBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9554F41F8525AE00A08D0F /* FireBaseController.swift */; };
 		EC02C47A1F8CB1C5002BC60D /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */; };
 		EC02C47C1F8CB866002BC60D /* DetailsGarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */; };
+		EC06F2F31F8E23A000EDA27E /* SendingDevisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC06F2F21F8E23A000EDA27E /* SendingDevisViewController.swift */; };
 		EC8131E81F8BC57400029BA0 /* PendingDevisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131E71F8BC57400029BA0 /* PendingDevisViewController.swift */; };
 		EC8131EA1F8BC5B900029BA0 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131E91F8BC5B900029BA0 /* NotificationsViewController.swift */; };
-		EC8131EC1F8BCAD000029BA0 /* testTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131EB1F8BCAD000029BA0 /* testTableViewController.swift */; };
 		ECE97D381F837C8D00C3FFAF /* WebServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE97D371F837C8D00C3FFAF /* WebServicesController.swift */; };
 		ECE97D3A1F83896000C3FFAF /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE97D391F83896000C3FFAF /* Garage.swift */; };
 		ECED99361F82655A00335579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED99351F82655A00335579 /* AppDelegate.swift */; };
@@ -35,10 +35,10 @@
 		E6AB767D2F1D2538B827175C /* Pods-FindGarageV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindGarageV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindGarageV2/Pods-FindGarageV2.debug.xcconfig"; sourceTree = "<group>"; };
 		EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsGarage.swift; sourceTree = "<group>"; };
+		EC06F2F21F8E23A000EDA27E /* SendingDevisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendingDevisViewController.swift; sourceTree = "<group>"; };
 		EC8131E51F8BA7CC00029BA0 /* FacebookSDKs-iOS-4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "FacebookSDKs-iOS-4"; path = "../../../../../Downloads/FacebookSDKs-iOS-4"; sourceTree = "<group>"; };
 		EC8131E71F8BC57400029BA0 /* PendingDevisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingDevisViewController.swift; sourceTree = "<group>"; };
 		EC8131E91F8BC5B900029BA0 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		EC8131EB1F8BCAD000029BA0 /* testTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testTableViewController.swift; sourceTree = "<group>"; };
 		ECE97D371F837C8D00C3FFAF /* WebServicesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesController.swift; sourceTree = "<group>"; };
 		ECE97D391F83896000C3FFAF /* Garage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		ECED99321F82655A00335579 /* FindGarageV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindGarageV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,8 +165,8 @@
 				ECED99371F82655A00335579 /* ViewController.swift */,
 				ECED994A1F826EB700335579 /* FindGarageViewController.swift */,
 				EC8131E71F8BC57400029BA0 /* PendingDevisViewController.swift */,
-				EC8131EB1F8BCAD000029BA0 /* testTableViewController.swift */,
 				EC8131E91F8BC5B900029BA0 /* NotificationsViewController.swift */,
+				EC06F2F21F8E23A000EDA27E /* SendingDevisViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -317,8 +317,8 @@
 			files = (
 				EC8131EA1F8BC5B900029BA0 /* NotificationsViewController.swift in Sources */,
 				ECED994B1F826EB700335579 /* FindGarageViewController.swift in Sources */,
+				EC06F2F31F8E23A000EDA27E /* SendingDevisViewController.swift in Sources */,
 				ECE97D3A1F83896000C3FFAF /* Garage.swift in Sources */,
-				EC8131EC1F8BCAD000029BA0 /* testTableViewController.swift in Sources */,
 				ECE97D381F837C8D00C3FFAF /* WebServicesController.swift in Sources */,
 				AD9554F51F8525AE00A08D0F /* FireBaseController.swift in Sources */,
 				EC02C47A1F8CB1C5002BC60D /* UIViewController+Utils.swift in Sources */,

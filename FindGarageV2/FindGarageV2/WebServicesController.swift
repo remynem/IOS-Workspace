@@ -54,7 +54,6 @@ class WebServiceController{
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data{
                 let json = JSON(data: data)
-                print("data found with this url : \(url)")
                 let garageFound = DetailsGarage(json: json["result"])
                 DispatchQueue.main.async {
                     handler(garageFound)

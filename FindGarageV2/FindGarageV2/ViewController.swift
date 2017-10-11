@@ -14,6 +14,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
 
     
     @IBOutlet weak var loginWithGoogleButton: GIDSignInButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +22,11 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().uiDelegate = self
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.onGoogleLoginFail, object: nil, queue: OperationQueue.main) { (notification) in
-            //print(notification.userInfo)
+            self.activityIndicator.stopAnimating()
         }
         NotificationCenter.default.addObserver(forName: NSNotification.Name.onGoogleLoginSuccess, object: nil, queue: OperationQueue.main) { (notification) in
-            print("Notification")
-            
+            self.activityIndicator.stopAnimating()
             self.performSegue(withIdentifier: "goToMainTabBarControllerSegue", sender: notification.userInfo)
-            self.presentAlertDialog(withTitle: "Map corrigé", andMessage: "c'est super")
         }
         
         
@@ -40,6 +39,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
 
 
     @IBAction func loginWithGoogleButton(_ sender: Any) {
+        self.activityIndicator.startAnimating()
         GIDSignIn.sharedInstance().signIn()
     }
     
