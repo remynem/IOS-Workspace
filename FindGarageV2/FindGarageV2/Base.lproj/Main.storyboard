@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.200000000000003" y="-501.49925037481262"/>
+            <point key="canvasLocation" x="-86" y="-465"/>
         </scene>
         <!--Contact-->
         <scene sceneID="Kkk-4g-yTN">
@@ -121,7 +121,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYB-kB-sRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3324" y="889.20539730134942"/>
+            <point key="canvasLocation" x="2378" y="959"/>
         </scene>
         <!--Notifications View Controller-->
         <scene sceneID="634-Zo-whs">
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bx-Si-4rl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4338.3999999999996" y="887.40629685157433"/>
+            <point key="canvasLocation" x="3713" y="359"/>
         </scene>
         <!--Who we are-->
         <scene sceneID="CbD-cD-VLG">
@@ -316,6 +316,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="devisDescriptionTextView" destination="zi3-yX-CKt" id="6dv-6t-4I6"/>
                         <outlet property="selectedGarageAdresseUILabel" destination="xeX-UW-gS7" id="hYr-f5-ZCM"/>
                         <outlet property="selectedGarageNameUILabel" destination="TB3-tz-odm" id="Cal-QK-RKE"/>
                         <outlet property="selectedGaragePhoneUILabel" destination="nxD-dj-NzQ" id="t5p-tQ-AgG"/>
@@ -402,7 +403,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map " id="qMx-UP-A2X">
-                        <barButtonItem key="rightBarButtonItem" image="icons8-Logout Rounded Up Filled-50" id="CSp-Ef-Jn4"/>
+                        <barButtonItem key="rightBarButtonItem" image="icons8-Logout Rounded Up Filled-50" id="CSp-Ef-Jn4">
+                            <connections>
+                                <action selector="LogOut:" destination="exy-gw-zWy" id="Y2t-if-jIV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="goToSendDevisButton" destination="3kV-QF-vR2" id="FvT-qh-kg4"/>
@@ -433,7 +438,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3H-a8-95K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-500"/>
+            <point key="canvasLocation" x="2378" y="-465"/>
         </scene>
         <!--Map-->
         <scene sceneID="NhH-Uq-Zwb">

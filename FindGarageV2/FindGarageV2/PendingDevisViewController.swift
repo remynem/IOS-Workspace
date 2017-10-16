@@ -11,6 +11,8 @@ import UIKit
 class PendingDevisViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet var ListOfPendingDevisTableView: UITableView!
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

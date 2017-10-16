@@ -11,6 +11,7 @@ pod 'SwiftyJSON'
 pod 'Firebase'
 pod 'Google'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
 pod 'GoogleSignIn'
 
 

@@ -13,6 +13,7 @@
 		EC02C47A1F8CB1C5002BC60D /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */; };
 		EC02C47C1F8CB866002BC60D /* DetailsGarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */; };
 		EC06F2F31F8E23A000EDA27E /* SendingDevisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC06F2F21F8E23A000EDA27E /* SendingDevisViewController.swift */; };
+		EC7A8C101F94C4F3008CC4BF /* UserDevis.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A8C0F1F94C4F3008CC4BF /* UserDevis.swift */; };
 		EC8131E81F8BC57400029BA0 /* PendingDevisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131E71F8BC57400029BA0 /* PendingDevisViewController.swift */; };
 		EC8131EA1F8BC5B900029BA0 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8131E91F8BC5B900029BA0 /* NotificationsViewController.swift */; };
 		ECE97D381F837C8D00C3FFAF /* WebServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE97D371F837C8D00C3FFAF /* WebServicesController.swift */; };
@@ -36,6 +37,7 @@
 		EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsGarage.swift; sourceTree = "<group>"; };
 		EC06F2F21F8E23A000EDA27E /* SendingDevisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendingDevisViewController.swift; sourceTree = "<group>"; };
+		EC7A8C0F1F94C4F3008CC4BF /* UserDevis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDevis.swift; sourceTree = "<group>"; };
 		EC8131E51F8BA7CC00029BA0 /* FacebookSDKs-iOS-4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "FacebookSDKs-iOS-4"; path = "../../../../../Downloads/FacebookSDKs-iOS-4"; sourceTree = "<group>"; };
 		EC8131E71F8BC57400029BA0 /* PendingDevisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingDevisViewController.swift; sourceTree = "<group>"; };
 		EC8131E91F8BC5B900029BA0 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				ECE97D391F83896000C3FFAF /* Garage.swift */,
 				EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */,
+				EC7A8C0F1F94C4F3008CC4BF /* UserDevis.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -283,6 +287,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +324,7 @@
 				ECED994B1F826EB700335579 /* FindGarageViewController.swift in Sources */,
 				EC06F2F31F8E23A000EDA27E /* SendingDevisViewController.swift in Sources */,
 				ECE97D3A1F83896000C3FFAF /* Garage.swift in Sources */,
+				EC7A8C101F94C4F3008CC4BF /* UserDevis.swift in Sources */,
 				ECE97D381F837C8D00C3FFAF /* WebServicesController.swift in Sources */,
 				AD9554F51F8525AE00A08D0F /* FireBaseController.swift in Sources */,
 				EC02C47A1F8CB1C5002BC60D /* UIViewController+Utils.swift in Sources */,

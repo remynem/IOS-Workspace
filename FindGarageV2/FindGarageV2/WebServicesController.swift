@@ -18,7 +18,7 @@ class WebServiceController{
     static let googleMapsRadarSearchURL = URL(string: "https://maps.googleapis.com/maps/api/place/radarsearch/json?")!
     static let googleMapsSearchPlaceDetailsURL = URL(string:"https://maps.googleapis.com/maps/api/place/details/json?")!
     
-    static func fetchGooglePlaces(near coordinate: CLLocationCoordinate2D, handler: @escaping ([Garage]) -> Void) {
+    static func fetchGooglePlaces(near coordinate: CLLocationCoordinate2D, handler: @escaping ([Garage], Error?) -> Void) {
         
         let query: [String: String] = [
             "key": WebServiceController.apiKey,
@@ -34,7 +34,7 @@ class WebServiceController{
                 let results = json["results"].arrayValue
                 let garageFound = results.flatMap{Garage(json: $0)}
                 DispatchQueue.main.async {
-                    handler(garageFound)
+                    handler(garageFound, error)
                 }
             }
         }

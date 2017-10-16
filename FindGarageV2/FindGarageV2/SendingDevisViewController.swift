@@ -18,6 +18,7 @@ class SendingDevisViewController: UIViewController {
     @IBOutlet weak var selectedGaragePhoneUILabel: UILabel!
     @IBOutlet weak var selectedGarageWebsiteUILabel: UILabel!
     
+    @IBOutlet weak var devisDescriptionTextView: UITextView!
     
     
     @IBAction func cancelSendingDevis(_ sender: Any) {
@@ -56,7 +57,8 @@ class SendingDevisViewController: UIViewController {
     */
     
     @IBAction func sendDevisUIButton(_ sender: Any) {
-        print("Data sent")
+        FireBaseController.sharedInstance.saveUserDevis(selectedGarage: self.selectedGarage, devisDescription: devisDescriptionTextView.text ?? " ")
+        
     }
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         

@@ -9,22 +9,38 @@
 import Foundation
 import UIKit
 import CoreLocation
+import FirebaseAuth
 import MapKit
 
 class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    // MARK: IBOutlet
     @IBOutlet weak var mapNearestGarages: MKMapView!
     @IBOutlet weak var goToSendDevisButton: UIButton!
     @IBOutlet weak var selectedGarageNameLabel: UILabel!
     @IBOutlet weak var selectedGarageAdressLabel: UILabel!
     @IBOutlet weak var selectedGaragePhoneLabel: UILabel!
     
+    @IBAction func LogOut(_ sender: Any) {
+    
+        do {
+                try Auth.auth().signOut()
+            } catch let logoutError as NSError {
+                print("Error signing out: %@", logoutError)
+            }
+            
+        dismiss(animated: true, completion: nil)
+        
+    }
+    // MARK: Init
     let locationManager = CLLocationManager()
     var garages:[Garage] = []
     var allGaragesWithDetails:[DetailsGarage] = []
     var selectedGarage:DetailsGarage!
+    var lastUserLocationFound: CLLocation?
     
-
+    
+    // MARK: APP Manager
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,38 +49,110 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapNearestGarages.delegate = self
+        self.mapNearestGarages.mapType = MKMapType.standard
+        self.mapNearestGarages.clearsContextBeforeDrawing = true
+        self.mapNearestGarages.showsUserLocation = true
         self.goToSendDevisButton.isEnabled = false
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        findNearestGarage()
+        self.mapNearestGarages.clearsContextBeforeDrawing = true
+        //findNearestGarage()
         fetchAllDetailsForGaragesFound()
-
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
- 
+    
+    //MARK: MAP Manager
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let currentLocation = locations.first{
-            print(currentLocation.coordinate)
+
+
+        let newLocation = locations.first!
+
+        if let lastLocationFound = lastUserLocationFound{
+            
+            if lastLocationFound.distance(from: newLocation) > 5000{
+                findNearestGarage(fromCoordinate: newLocation.coordinate)
+            }
+            
+        }else{
+            findNearestGarage(fromCoordinate: newLocation.coordinate)
         }
+        self.lastUserLocationFound = newLocation
+       
     }
     
-    // Find nearest garage form the user's position
-    func findNearestGarage(){
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let placeId = ""+(view.annotation?.title!)!
         
-        WebServiceController.fetchGooglePlaces(near: CLLocationCoordinate2D(latitude: 50.449801,  longitude: 4.848380)){
-            garageFound in
-            self.garages += garageFound
+        WebServiceController.fetchGooglePlaceDetails(placeId: placeId){ placeDetails in
+            guard let placeDetails = placeDetails else{
+                print("Place details is nil.....")
+                return
+            }
+            self.selectedGarage = placeDetails
+            self.displayPlaceDetail(place: placeDetails)
+        }
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{
+            return nil
+        }else{
+            let pinId = "myPin"
+            var pinView:MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinId) as? MKPinAnnotationView{
+                dequeuedView.annotation = annotation
+                pinView = dequeuedView
+                
+            }else{
+                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinId)
+            }
+            return pinView
+        }
+    }
+
+    // Find nearest garage form the user's position
+    func findNearestGarage(fromCoordinate coord:CLLocationCoordinate2D){
+
+        WebServiceController.fetchGooglePlaces(near: CLLocationCoordinate2D(latitude: coord.latitude,  longitude: coord.longitude)){
+            (garageFound, error) in
+
+            if let error = error{
+                self.presentAlert(withError: error)
+            }
+            self.mapNearestGarages.removeAnnotations(self.mapNearestGarages.annotations)
+            self.garages = garageFound
             self.addPins(forGarages: garageFound)
         }
     }
+    
+    func addPins(forGarages garages:[Garage]){
+        var count = 10
+        if self.garages.count < 10 {
+            count = self.garages.count
+        }
+       
+        for i in 0 ..< count
+        {
+            let pin = MKPointAnnotation()
+            pin.coordinate = garages[i].location
+            pin.title = garages[i].id
+            mapNearestGarages.addAnnotation(pin)
+            
+        }
+        let allAnnotations = mapNearestGarages.annotations
+        mapNearestGarages.showAnnotations(allAnnotations, animated: true)
+    }
+    
+    
+    
+    // MARK: Places Manager
     
     //get details for garages with place_id
     func fetchAllDetailsForGaragesFound() {
@@ -86,60 +174,11 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
         
     }
     
-    
-    func addPins(forGarages garages:[Garage]){
-        var count = 10
-        if self.garages.count < 10 {
-            count = self.garages.count
-        }
-        
-        for i in 0 ..< count
-        {
-            let pin = MKPointAnnotation()
-            pin.coordinate = garages[i].location
-            pin.title = garages[i].id
-            mapNearestGarages.addAnnotation(pin)
-        }
-        let allAnnotations = mapNearestGarages.annotations
-        mapNearestGarages.showAnnotations(allAnnotations, animated: true)
-    }
-    
     func displayPlaceDetail(place:DetailsGarage){
         self.selectedGarageNameLabel?.text = place.name
         self.selectedGarageAdressLabel?.text = place.formatted_address
         self.selectedGaragePhoneLabel?.text = place.international_phone_number
         self.goToSendDevisButton.isEnabled = true
-    }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation{
-            return nil
-        }else{
-            let pinId = "myPin"
-            var pinView:MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinId) as? MKPinAnnotationView{
-                dequeuedView.annotation = annotation
-                pinView = dequeuedView
-            }else{
-                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinId)
-            }
-            return pinView
-        }
-    }
-    
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let placeId = ""+(view.annotation?.title!)!
-        
-        WebServiceController.fetchGooglePlaceDetails(placeId: placeId){ placeDetails in
-            guard let placeDetails = placeDetails else{
-                print("Place details is nil.....")
-                return
-            }
-            self.selectedGarage = placeDetails
-            self.displayPlaceDetail(place: placeDetails)
-         }
-        
     }
     
     // send segue with info
