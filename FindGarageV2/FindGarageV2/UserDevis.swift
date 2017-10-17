@@ -21,5 +21,9 @@ class UserDevis{
         self.garageName = garageName
         self.devisDescription = devisDescription
     }
+    
+    func discribe() -> String{
+        return garageName + " " + devisDescription
+    }
 
 }

@@ -80,6 +80,7 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
             }
             
         }else{
+            resetLabelsForPlaceDetails()
             findNearestGarage(fromCoordinate: newLocation.coordinate)
         }
         self.lastUserLocationFound = newLocation
@@ -181,6 +182,13 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
         self.goToSendDevisButton.isEnabled = true
     }
     
+    func resetLabelsForPlaceDetails(){
+        self.selectedGarageNameLabel?.text = ""
+        self.selectedGarageAdressLabel?.text = ""
+        self.selectedGaragePhoneLabel?.text = ""
+        self.goToSendDevisButton.isEnabled = false
+    
+    }
     // send segue with info
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

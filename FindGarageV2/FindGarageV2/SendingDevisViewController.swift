@@ -29,15 +29,12 @@ class SendingDevisViewController: UIViewController {
         super.viewDidLoad()
         fillInDataToLabels()
 
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //fillInDataToLabels()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func fillInDataToLabels(){
@@ -45,6 +42,13 @@ class SendingDevisViewController: UIViewController {
         self.selectedGarageAdresseUILabel?.text = self.selectedGarage.formatted_address
         self.selectedGaragePhoneUILabel?.text = self.selectedGarage.international_phone_number
         self.selectedGarageWebsiteUILabel?.text = self.selectedGarage.website
+    }
+    
+    func resetLabelsValues(){
+        self.selectedGarageNameUILabel?.text = ""
+        self.selectedGarageAdresseUILabel?.text = ""
+        self.selectedGaragePhoneUILabel?.text = ""
+        self.selectedGarageWebsiteUILabel?.text = ""
     }
     /*
     // MARK: - Navigation
@@ -59,6 +63,7 @@ class SendingDevisViewController: UIViewController {
     @IBAction func sendDevisUIButton(_ sender: Any) {
         FireBaseController.sharedInstance.saveUserDevis(selectedGarage: self.selectedGarage, devisDescription: devisDescriptionTextView.text ?? " ")
         
+        print(FireBaseController.sharedInstance.getUserPendingDevis())
     }
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
