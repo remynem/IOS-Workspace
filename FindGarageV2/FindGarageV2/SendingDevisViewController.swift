@@ -62,8 +62,6 @@ class SendingDevisViewController: UIViewController {
     
     @IBAction func sendDevisUIButton(_ sender: Any) {
         FireBaseController.sharedInstance.saveUserDevis(selectedGarage: self.selectedGarage, devisDescription: devisDescriptionTextView.text ?? " ")
-        
-        print(FireBaseController.sharedInstance.getUserPendingDevis())
     }
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         

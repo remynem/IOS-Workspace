@@ -10,10 +10,10 @@ import Foundation
 
 
 class UserDevis{
-    private var userEmail = ""
-    private var garageId = ""
-    private var garageName = ""
-    private var devisDescription = ""
+    var userEmail = ""
+    var garageId = ""
+    var garageName = ""
+    var devisDescription = ""
     
     init(userEmail:String, garageId:String, garageName:String, devisDescription:String) {
         self.userEmail = userEmail

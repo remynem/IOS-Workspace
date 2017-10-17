@@ -8,32 +8,66 @@
 
 import UIKit
 
-class PendingDevisViewController: UIViewController, UITableViewDelegate {
+class PendingDevisViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var ListOfPendingDevisTableView: UITableView!
+    var userPendingDevis:[UserDevis] = []
+    
+    @IBOutlet var listOfPendingDevisTableView: UITableView!
  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ListOfPendingDevisTableView.delegate = self
-        // Do any additional setup after loading the view.
-    }
+        listOfPendingDevisTableView.delegate = self
+        listOfPendingDevisTableView.dataSource = self
+        fetchUserPendingDevis()
+        listOfPendingDevisTableView.reloadData()
 
+        
+    }
+    func fetchUserPendingDevis(){
+        FireBaseController.sharedInstance.getUserPendingDevis(handler: {
+            devisFound in
+            self.userPendingDevis = devisFound
+            self.listOfPendingDevisTableView.reloadData()
+        })
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        fetchUserPendingDevis()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        if(userPendingDevis.count > 0){
+            return 1
+        }else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return userPendingDevis.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GarageDetails", for: indexPath)
+        let devis = userPendingDevis[indexPath.row]
+        
+        cell.textLabel?.text = devis.garageName
+        cell.detailTextLabel?.text = devis.discribe()
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let devis = userPendingDevis[indexPath.row]
+        print(devis.discribe())
     }
     /*
     // MARK: - Navigation
