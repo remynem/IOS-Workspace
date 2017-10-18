@@ -47,11 +47,18 @@ class FireBaseController {
         
     }
     
+    func notifyUserForDevisUpdate(){
+        userDevisRefTable = FireBaseController.dataBaseRef
+        userDevisRefTable.child("UsersDevis").observe(.childChanged, with: { snapshot in
+            print("\(snapshot)")
+        })
+    }
+    
     func getUserPendingDevis(handler: @escaping ([UserDevis]) -> Void){
         var devisFound:[UserDevis] = []
         let userID = Auth.auth().currentUser?.uid
         userDevisRefTable = FireBaseController.dataBaseRef
-        
+    
         userDevisRefTable.child("UsersDevis").observeSingleEvent(of: .value, with: { (snapshot)
             in
             for childSnap in  snapshot.children.allObjects {

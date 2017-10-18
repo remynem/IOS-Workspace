@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD9554F11F8508D000A08D0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2BCD341F84E457007ABF34 /* GoogleService-Info.plist */; };
 		AD9554F31F8521F900A08D0F /* GoogleNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9554F21F8521F900A08D0F /* GoogleNotificationCenter.swift */; };
 		AD9554F51F8525AE00A08D0F /* FireBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9554F41F8525AE00A08D0F /* FireBaseController.swift */; };
+		EC01A7D11F978C9A003AF4DC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC01A7D01F978C9A003AF4DC /* UserNotifications.framework */; };
+		EC01A7D31F978C9A003AF4DC /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC01A7D21F978C9A003AF4DC /* UserNotificationsUI.framework */; };
+		EC01A7E21F979359003AF4DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2BCD341F84E457007ABF34 /* GoogleService-Info.plist */; };
 		EC02C47A1F8CB1C5002BC60D /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */; };
 		EC02C47C1F8CB866002BC60D /* DetailsGarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */; };
 		EC06F2F31F8E23A000EDA27E /* SendingDevisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC06F2F21F8E23A000EDA27E /* SendingDevisViewController.swift */; };
@@ -27,6 +29,19 @@
 		F40B82F3F7439451CFC5C3C2 /* Pods_FindGarageV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D4D2B334D26C206C13EC97 /* Pods_FindGarageV2.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EC01A7CA1F9785E3003AF4DC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		06D4D2B334D26C206C13EC97 /* Pods_FindGarageV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindGarageV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2BCD341F84E457007ABF34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -34,6 +49,10 @@
 		AD9554F41F8525AE00A08D0F /* FireBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseController.swift; sourceTree = "<group>"; };
 		C33B7BFC94D938A963F6E674 /* Pods-FindGarageV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindGarageV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindGarageV2/Pods-FindGarageV2.release.xcconfig"; sourceTree = "<group>"; };
 		E6AB767D2F1D2538B827175C /* Pods-FindGarageV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindGarageV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindGarageV2/Pods-FindGarageV2.debug.xcconfig"; sourceTree = "<group>"; };
+		EC01A7BF1F9785E3003AF4DC /* NotifyUserDevisChange.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotifyUserDevisChange.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC01A7CF1F978C9A003AF4DC /* NotifyUserForDevisUpdates.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotifyUserForDevisUpdates.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC01A7D01F978C9A003AF4DC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		EC01A7D21F978C9A003AF4DC /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		EC02C4791F8CB1C5002BC60D /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		EC02C47B1F8CB866002BC60D /* DetailsGarage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsGarage.swift; sourceTree = "<group>"; };
 		EC06F2F21F8E23A000EDA27E /* SendingDevisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendingDevisViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +73,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EC01A7BC1F9785E3003AF4DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC01A7CC1F978C9A003AF4DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC01A7D31F978C9A003AF4DC /* UserNotificationsUI.framework in Frameworks */,
+				EC01A7D11F978C9A003AF4DC /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECED992F1F82655A00335579 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,6 +105,8 @@
 			children = (
 				EC8131E51F8BA7CC00029BA0 /* FacebookSDKs-iOS-4 */,
 				06D4D2B334D26C206C13EC97 /* Pods_FindGarageV2.framework */,
+				EC01A7D01F978C9A003AF4DC /* UserNotifications.framework */,
+				EC01A7D21F978C9A003AF4DC /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				ECED99321F82655A00335579 /* FindGarageV2.app */,
+				EC01A7BF1F9785E3003AF4DC /* NotifyUserDevisChange.appex */,
+				EC01A7CF1F978C9A003AF4DC /* NotifyUserForDevisUpdates.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +216,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EC01A7BE1F9785E3003AF4DC /* NotifyUserDevisChange */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC01A7C71F9785E3003AF4DC /* Build configuration list for PBXNativeTarget "NotifyUserDevisChange" */;
+			buildPhases = (
+				EC01A7BB1F9785E3003AF4DC /* Sources */,
+				EC01A7BC1F9785E3003AF4DC /* Frameworks */,
+				EC01A7BD1F9785E3003AF4DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotifyUserDevisChange;
+			productName = NotifyUserDevisChange;
+			productReference = EC01A7BF1F9785E3003AF4DC /* NotifyUserDevisChange.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		EC01A7CE1F978C9A003AF4DC /* NotifyUserForDevisUpdates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC01A7DE1F978C9A003AF4DC /* Build configuration list for PBXNativeTarget "NotifyUserForDevisUpdates" */;
+			buildPhases = (
+				EC01A7CB1F978C9A003AF4DC /* Sources */,
+				EC01A7CC1F978C9A003AF4DC /* Frameworks */,
+				EC01A7CD1F978C9A003AF4DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotifyUserForDevisUpdates;
+			productName = NotifyUserForDevisUpdates;
+			productReference = EC01A7CF1F978C9A003AF4DC /* NotifyUserForDevisUpdates.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		ECED99311F82655A00335579 /* FindGarageV2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECED99441F82655A00335579 /* Build configuration list for PBXNativeTarget "FindGarageV2" */;
@@ -187,6 +260,7 @@
 				ECED99301F82655A00335579 /* Resources */,
 				4BD1D6BE2F5DB40C4A235C83 /* [CP] Embed Pods Frameworks */,
 				49CA8C3E7AD9E46A2E973F52 /* [CP] Copy Pods Resources */,
+				EC01A7CA1F9785E3003AF4DC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -207,10 +281,28 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Remy;
 				TargetAttributes = {
+					EC01A7BE1F9785E3003AF4DC = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = Y3VWGH3T55;
+						ProvisioningStyle = Automatic;
+					};
+					EC01A7CE1F978C9A003AF4DC = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = Y3VWGH3T55;
+						ProvisioningStyle = Automatic;
+					};
 					ECED99311F82655A00335579 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = Y3VWGH3T55;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -228,19 +320,35 @@
 			projectRoot = "";
 			targets = (
 				ECED99311F82655A00335579 /* FindGarageV2 */,
+				EC01A7BE1F9785E3003AF4DC /* NotifyUserDevisChange */,
+				EC01A7CE1F978C9A003AF4DC /* NotifyUserForDevisUpdates */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC01A7BD1F9785E3003AF4DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC01A7CD1F978C9A003AF4DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECED99301F82655A00335579 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ECED99401F82655A00335579 /* LaunchScreen.storyboard in Resources */,
+				EC01A7E21F979359003AF4DC /* GoogleService-Info.plist in Resources */,
 				ECED993D1F82655A00335579 /* Assets.xcassets in Resources */,
 				ECED993B1F82655A00335579 /* Main.storyboard in Resources */,
-				AD9554F11F8508D000A08D0F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +384,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -286,6 +395,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -316,6 +426,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EC01A7BB1F9785E3003AF4DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC01A7CB1F978C9A003AF4DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECED992E1F82655A00335579 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +482,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EC01A7C81F9785E3003AF4DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y3VWGH3T55;
+				INFOPLIST_FILE = NotifyUserDevisChange/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.remy.FindGarageV2.NotifyUserDevisChange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EC01A7C91F9785E3003AF4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y3VWGH3T55;
+				INFOPLIST_FILE = NotifyUserDevisChange/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.remy.FindGarageV2.NotifyUserDevisChange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EC01A7DF1F978C9A003AF4DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y3VWGH3T55;
+				INFOPLIST_FILE = NotifyUserForDevisUpdates/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.remy.FindGarageV2.NotifyUserForDevisUpdates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EC01A7E01F978C9A003AF4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y3VWGH3T55;
+				INFOPLIST_FILE = NotifyUserForDevisUpdates/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.remy.FindGarageV2.NotifyUserForDevisUpdates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		ECED99421F82655A00335579 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6AB767D2F1D2538B827175C /* Pods-FindGarageV2.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y3VWGH3T55;
 				INFOPLIST_FILE = FindGarageV2/Info.plist;
@@ -481,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C33B7BFC94D938A963F6E674 /* Pods-FindGarageV2.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y3VWGH3T55;
 				INFOPLIST_FILE = FindGarageV2/Info.plist;
@@ -494,6 +672,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC01A7C71F9785E3003AF4DC /* Build configuration list for PBXNativeTarget "NotifyUserDevisChange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC01A7C81F9785E3003AF4DC /* Debug */,
+				EC01A7C91F9785E3003AF4DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC01A7DE1F978C9A003AF4DC /* Build configuration list for PBXNativeTarget "NotifyUserForDevisUpdates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC01A7DF1F978C9A003AF4DC /* Debug */,
+				EC01A7E01F978C9A003AF4DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ECED992D1F82655A00335579 /* Build configuration list for PBXProject "FindGarageV2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

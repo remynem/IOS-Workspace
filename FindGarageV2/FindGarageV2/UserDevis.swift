@@ -23,7 +23,7 @@ class UserDevis{
     }
     
     func discribe() -> String{
-        return garageName + " " + devisDescription
+        return devisDescription + " at " + garageName
     }
 
 }

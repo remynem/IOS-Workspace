@@ -91,38 +91,67 @@
             </objects>
             <point key="canvasLocation" x="-86" y="-465"/>
         </scene>
-        <!--Pending Devis View Controller-->
-        <scene sceneID="Kkk-4g-yTN">
+        <!--Title-->
+        <scene sceneID="eVA-Uc-bFH">
             <objects>
-                <tableViewController storyboardIdentifier="PendingDevisTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gS6-h9-8Ot" customClass="PendingDevisViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bXJ-dU-gLK">
+                <viewController storyboardIdentifier="PendingDevisViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UDm-Vu-OWh" customClass="PendingDevisViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zMF-rP-Kj3"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Lg-0Z-S2y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RB2-gH-tzj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.81357270079999999" green="0.81357270079999999" blue="0.81357270079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="separatorColor" red="1" green="0.62214086059999996" blue="0.52626595369999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="GarageDetails" selectionStyle="default" indentationWidth="10" reuseIdentifier="GarageDetails" id="j4x-Xq-P49">
-                                <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4x-Xq-P49" id="zBO-fz-yBG">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gS6-h9-8Ot" id="Pua-Mt-CcA"/>
-                            <outlet property="delegate" destination="gS6-h9-8Ot" id="hw3-5q-Jar"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="zkr-8c-u5e"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mjA-ET-GIk">
+                                <rect key="frame" x="0.0" y="116" width="320" height="315"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GarageDetails" id="QYA-xG-LQM">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QYA-xG-LQM" id="YUk-Ze-iLn">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="125-9D-KjE">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="My Devis" id="PFw-n5-ncm"/>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" placeholder="Search by devis description" translatesAutoresizingMaskIntoConstraints="NO" id="Hda-qL-U1b">
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="125-9D-KjE" firstAttribute="leading" secondItem="RB2-gH-tzj" secondAttribute="leading" id="0Ep-dF-r90"/>
+                            <constraint firstItem="Hda-qL-U1b" firstAttribute="top" secondItem="125-9D-KjE" secondAttribute="bottom" id="1Lq-s3-3u7"/>
+                            <constraint firstAttribute="trailing" secondItem="mjA-ET-GIk" secondAttribute="trailing" id="7dN-hu-255"/>
+                            <constraint firstAttribute="trailing" secondItem="125-9D-KjE" secondAttribute="trailing" id="EJL-uM-kmh"/>
+                            <constraint firstAttribute="trailing" secondItem="Hda-qL-U1b" secondAttribute="trailing" id="FxO-2v-0eE"/>
+                            <constraint firstItem="Hda-qL-U1b" firstAttribute="leading" secondItem="RB2-gH-tzj" secondAttribute="leading" id="MWx-eS-8R3"/>
+                            <constraint firstItem="5Lg-0Z-S2y" firstAttribute="top" secondItem="mjA-ET-GIk" secondAttribute="bottom" id="TAG-mu-JVm"/>
+                            <constraint firstItem="mjA-ET-GIk" firstAttribute="leading" secondItem="RB2-gH-tzj" secondAttribute="leading" id="d6y-g5-1La"/>
+                            <constraint firstItem="125-9D-KjE" firstAttribute="top" secondItem="zMF-rP-Kj3" secondAttribute="bottom" constant="8" id="g3g-7r-ZWJ"/>
+                            <constraint firstItem="Hda-qL-U1b" firstAttribute="bottom" secondItem="mjA-ET-GIk" secondAttribute="top" id="yco-UP-Wmg"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="Lrf-eh-hRg"/>
+                    <navigationItem key="navigationItem" title="Title" id="8zK-M9-5a1"/>
                     <connections>
-                        <outlet property="ListOfPendingDevisTableView" destination="bXJ-dU-gLK" id="pip-3A-SDG"/>
+                        <outlet property="listOfPendingDevisTableView" destination="mjA-ET-GIk" id="2Mu-I9-vPS"/>
+                        <outlet property="searchByDavisDescriptionBar" destination="Hda-qL-U1b" id="2cf-ZU-BQ0"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TYB-kB-sRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ma7-hI-vJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3698" y="359"/>
+            <point key="canvasLocation" x="3699" y="359"/>
         </scene>
         <!--Notifications View Controller-->
         <scene sceneID="634-Zo-whs">
@@ -155,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="2378" y="359"/>
         </scene>
-        <!--View Controller-->
+        <!--Notifications View Controller-->
         <scene sceneID="uF2-Ov-aQ5">
             <objects>
-                <viewController id="nyg-Jp-NSO" sceneMemberID="viewController">
+                <viewController id="nyg-Jp-NSO" customClass="NotificationsViewController" customModule="FindGarageV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ghR-uT-4lb"/>
                         <viewControllerLayoutGuide type="bottom" id="94j-wF-gxO"/>
@@ -201,7 +230,7 @@
                                                 <rect key="frame" x="48.5" y="39" width="43" height="30"/>
                                                 <state key="normal" title="Okey?"/>
                                                 <connections>
-                                                    <segue destination="exy-gw-zWy" kind="show" id="gJC-nj-MEl"/>
+                                                    <segue destination="exy-gw-zWy" kind="show" id="M9t-DM-8aS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -228,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fep-wu-EuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506" y="2778"/>
+            <point key="canvasLocation" x="-244" y="1328"/>
         </scene>
         <!--Who we are-->
         <scene sceneID="CbD-cD-VLG">
@@ -402,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDT-hH-S2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="2164"/>
+            <point key="canvasLocation" x="1148" y="2164"/>
         </scene>
         <!--Map -->
         <scene sceneID="RKA-6u-Maq">
@@ -417,10 +446,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="u6E-OB-7bg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CuW-1r-0Bn">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="386.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="347"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Z1x-Dw-TfK"/>
@@ -430,7 +459,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1XB-ta-c2D">
-                                        <rect key="frame" x="0.0" y="386.5" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="347" width="320" height="34"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="I4a-oI-WLj"/>
@@ -440,7 +469,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPl-TF-hfv">
-                                        <rect key="frame" x="0.0" y="430" width="320" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="381" width="320" height="0.0"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="M2d-em-GjZ"/>
@@ -450,7 +479,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kV-QF-vR2">
-                                        <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="381" width="320" height="50"/>
                                         <color key="backgroundColor" red="0.79525351519999998" green="0.4049109629" blue="0.07123680265" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="f9x-O5-hOi"/>
@@ -479,13 +508,7 @@
                             <constraint firstItem="zUg-iW-eJe" firstAttribute="leading" secondItem="G6b-ug-q7I" secondAttribute="leading" id="h6i-Fq-0BS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Map " id="qMx-UP-A2X">
-                        <barButtonItem key="rightBarButtonItem" image="icons8-Logout Rounded Up Filled-50" id="CSp-Ef-Jn4">
-                            <connections>
-                                <action selector="LogOut:" destination="exy-gw-zWy" id="Y2t-if-jIV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Map " id="qMx-UP-A2X"/>
                     <connections>
                         <outlet property="goToSendDevisButton" destination="3kV-QF-vR2" id="FvT-qh-kg4"/>
                         <outlet property="mapNearestGarages" destination="zUg-iW-eJe" id="DgE-p7-7SH"/>
@@ -510,7 +533,7 @@
                     <connections>
                         <segue destination="2Cf-js-tfG" kind="relationship" relationship="viewControllers" id="uXE-7m-89x"/>
                         <segue destination="dsX-fp-Td8" kind="relationship" relationship="viewControllers" id="aUQ-ud-OF7"/>
-                        <segue destination="gS6-h9-8Ot" kind="relationship" relationship="viewControllers" id="YHw-um-0lj"/>
+                        <segue destination="UDm-Vu-OWh" kind="relationship" relationship="viewControllers" id="woe-bl-t9F"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3H-a8-95K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -540,9 +563,8 @@
     <resources>
         <image name="iTunesArtwork" width="768" height="768"/>
         <image name="icons8-Garage locator" width="25" height="25"/>
-        <image name="icons8-Logout Rounded Up Filled-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gJC-nj-MEl"/>
+        <segue reference="M9t-DM-8aS"/>
     </inferredMetricsTieBreakers>
 </document>

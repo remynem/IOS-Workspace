@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CoreLocation
-import FirebaseAuth
 import MapKit
 
 class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -21,17 +20,6 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
     @IBOutlet weak var selectedGarageAdressLabel: UILabel!
     @IBOutlet weak var selectedGaragePhoneLabel: UILabel!
     
-    @IBAction func LogOut(_ sender: Any) {
-    
-        do {
-                try Auth.auth().signOut()
-            } catch let logoutError as NSError {
-                print("Error signing out: %@", logoutError)
-            }
-            
-        dismiss(animated: true, completion: nil)
-        
-    }
     // MARK: Init
     let locationManager = CLLocationManager()
     var garages:[Garage] = []
@@ -198,5 +186,14 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
         }
     }
     
+    
+    @IBAction func unwindToFindGarageVC(segue: UIStoryboardSegue){
+        //self.navigationController!.tabBarController!.selectedViewController = self.navigationController!.tabBarController!.viewControllers![1]
+        self.tabBarController?.selectedIndex = 2
+        print(self.tabBarController?.selectedIndex ?? "no index")
+        
+        
+        
+    }
     
 }
