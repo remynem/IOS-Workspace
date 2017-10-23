@@ -8,29 +8,59 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController {
+class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-   
+   var userNotifications:[UserDevis] = []
+    
+    @IBOutlet weak var notificationTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.notificationTableView.delegate = self
+        self.notificationTableView.dataSource = self
+        
+        
+        FireBaseController.sharedInstance.notifyUserForDevisUpdate()
+        fetchUserNotifications()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func fetchUserNotifications(){
+        FireBaseController.sharedInstance.getUserNotifications(handler: {
+            devisFound in
+            self.userNotifications = devisFound
+            self.notificationTableView.reloadData()
+        })
     }
-    */
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        FireBaseController.sharedInstance.notifyUserForDevisUpdate()
+        fetchUserNotifications()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if(userNotifications.count > 0){
+            return 1
+        }else{
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userNotifications.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath)
+        let devis = userNotifications[indexPath.row]
+        
+        cell.textLabel?.text = devis.discribe()
+        
+        return cell
+    }
+    
 }

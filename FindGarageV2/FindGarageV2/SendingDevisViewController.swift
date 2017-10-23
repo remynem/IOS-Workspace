@@ -49,19 +49,13 @@ class SendingDevisViewController: UIViewController {
         self.selectedGarageAdresseUILabel?.text = ""
         self.selectedGaragePhoneUILabel?.text = ""
         self.selectedGarageWebsiteUILabel?.text = ""
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    @IBAction func sendDevisUIButton(_ sender: Any) {
+    @IBAction func sendDevisUIButton(_ sender: UIButton) {
         FireBaseController.sharedInstance.saveUserDevis(selectedGarage: self.selectedGarage, devisDescription: devisDescriptionTextView.text ?? " ")
+        sender.titleLabel?.text = "Data Sent"
+        sender.isEnabled = false
     }
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         

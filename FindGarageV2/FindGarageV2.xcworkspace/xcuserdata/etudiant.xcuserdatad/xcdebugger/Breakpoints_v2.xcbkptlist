@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FindGarageV2/FireBaseController.swift"
+            timestampString = "530458266.889566"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "savedUserNotifications(modifiedDevis:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FindGarageV2.FireBaseController.savedUserNotifications (modifiedDevis : __ObjC.DataSnapshot) -&gt; ()"
+                  moduleName = "FindGarageV2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/etudiant/Documents/BT/IOS/IOS-Workspace/FindGarageV2/FindGarageV2/FireBaseController.swift"
+                  timestampString = "530458463.76437"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1458">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FindGarageV2.FireBaseController.savedUserNotifications (modifiedDevis : __ObjC.DataSnapshot) -&gt; ()"
+                  moduleName = "FindGarageV2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/etudiant/Documents/BT/IOS/IOS-Workspace/FindGarageV2/FindGarageV2/FireBaseController.swift"
+                  timestampString = "530458463.768655"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1940">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

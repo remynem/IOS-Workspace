@@ -11,4 +11,6 @@ import Foundation
 extension Notification.Name {
     static let onGoogleLoginSuccess = Notification.Name("onGoogleLoginSuccessNotificationID")
     static let onGoogleLoginFail = Notification.Name("onGoogleLoginFailNotificationID")
+    
+    static let onFireBaseDataChanded = Notification.Name("onFirebaseDataChanged")
 }

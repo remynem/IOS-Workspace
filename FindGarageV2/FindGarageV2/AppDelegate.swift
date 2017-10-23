@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import Google
+import Firebase
+import FirebaseDatabase
 import GoogleSignIn
 import UserNotifications
 
@@ -16,7 +18,6 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
-
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -24,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
         return true
     }
     
@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         GIDSignIn.sharedInstance().signOut()
-        
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -44,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-
+        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -76,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 NotificationCenter.default.post(name: NSNotification.Name.onGoogleLoginSuccess, object: nil, userInfo: ["loggedUser": user])
             }
         }
-        
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

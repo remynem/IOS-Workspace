@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PendingDevisViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class PendingDevisViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
 
     var userPendingDevis:[UserDevis] = []
     
@@ -21,6 +21,7 @@ class PendingDevisViewController: UIViewController, UITableViewDelegate, UITable
         
         listOfPendingDevisTableView.delegate = self
         listOfPendingDevisTableView.dataSource = self
+        searchByDavisDescriptionBar.delegate = self
         fetchUserPendingDevis()
     }
     
@@ -35,7 +36,6 @@ class PendingDevisViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         fetchUserPendingDevis()
-        FireBaseController.sharedInstance.notifyUserForDevisUpdate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,35 +70,35 @@ class PendingDevisViewController: UIViewController, UITableViewDelegate, UITable
         print(devis.discribe())
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        if let text = searchBar.text {
+            searchInUserDevis(keyword: text)
+        }  
     }
-    */
     
-
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            searchInUserDevis(keyword: text)
+        }
+    }
+    
+    
+    func searchInUserDevis(keyword key:String){
+        
+        if (key.characters.count == 0) {
+            fetchUserPendingDevis()
+        }else{
+            var searchResults:[UserDevis] = []
+            for devis in self.userPendingDevis
+            {
+                if(devis.devisDescription.hasPrefix(key) || devis.devisDescription.hasSuffix(key)){
+                    searchResults.append(devis)
+                }
+            }
+            print("devis found in search \(searchResults.count)")
+            self.userPendingDevis = searchResults
+            self.listOfPendingDevisTableView.reloadData()
+        }
+    }
 }
 
-/*
- let center = UNUserNotificationCenter.current()
- center.delegate = self
- center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
- 
- }
- 
- func sendLocalUserNotification(withTitle title: String, Message msg: String){
- let content = UNMutableNotificationContent()
- content.title = title
- content.body = msg
- UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: title, content: content, trigger: nil))
- }
- extension UIViewController: UNUserNotificationCenterDelegate{
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
-    }
-}*/

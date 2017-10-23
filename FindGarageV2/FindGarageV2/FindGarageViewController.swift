@@ -46,7 +46,6 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.mapNearestGarages.clearsContextBeforeDrawing = true
-        //findNearestGarage()
         fetchAllDetailsForGaragesFound()
     }
     
@@ -188,11 +187,9 @@ class FindGarageViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     
     @IBAction func unwindToFindGarageVC(segue: UIStoryboardSegue){
-        //self.navigationController!.tabBarController!.selectedViewController = self.navigationController!.tabBarController!.viewControllers![1]
         self.tabBarController?.selectedIndex = 2
         print(self.tabBarController?.selectedIndex ?? "no index")
-        
-        
+
         
     }
     
